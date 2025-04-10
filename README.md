@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# Finance Tracker - Personal Finance Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Finance Tracker is a comprehensive personal finance management application that helps users track their income, expenses, and budgets. The application provides an intuitive interface for managing financial transactions, setting budget goals, and visualizing spending patterns.
 
-In the project directory, you can run:
+Built with React on the frontend and Django REST Framework on the backend, Finance Tracker offers a responsive and user-friendly experience across devices. The application uses modern web technologies and follows best practices for performance, security, and user experience.
 
-### `npm start`
+Key features include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Transaction management (income and expenses)
+- Budget planning and tracking
+- Category organization
+- Financial dashboard with visualizations
+- Secure authentication
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before you begin, ensure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+- Python (v3.8 or higher)
+- pip (latest version)
+- Django (v3.2 or higher)
+- SQLite
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/yourusername/finance-tracker-be.git
+   cd finance-tracker-be
+   ```
 
-### `npm run eject`
+2. Set up a Python virtual environment:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install backend dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Configure the database in `settings.py` (default is SQLite, but PostgreSQL is recommended for production)
 
-## Learn More
+5. Apply migrations:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   python manage.py migrate
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Create a test user:
 
-### Code Splitting
+   ```bash
+   python manage.py create_test_user
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. Create a superuser:
 
-### Analyzing the Bundle Size
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+8. Start the Django development server:
 
-### Making a Progressive Web App
+   ```bash
+   python manage.py runserver
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```
 
-### Advanced Configuration
+   The backend API will be available at `http://localhost:8000/api`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   Note: The DRF API is hosted at `https://finance-tracker-be-1-87a42fd39153.herokuapp.com/api`
 
-### Deployment
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Clone the repository:
 
-### `npm run build` fails to minify
+   ```bash
+   git clone https://github.com/yourusername/finance-tracker-fe.git
+   cd finance-tracker-fe
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Install frontend dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the React development server:
+
+   ```bash
+   npm start
+   ```
+
+   The application will be available at `http://localhost:3000`
+
+## Test User Information
+
+For testing purposes, you can use the following credentials:
+
+- **Username**: testuser
+- **Password**: password123
+
+This test account comes pre-populated with sample transactions, budgets, and categories to help you explore the application's features.
+
+## Key Technologies
+
+### Frontend
+
+- React
+- React Router for navigation
+- React Query for data fetching and caching
+- Material-UI for UI components
+- D3.js for data visualization
+- Axios for HTTP requests
+- Formik and Yup for form handling and validation
+
+### Backend
+
+- Django
+- Django REST Framework
+- JWT Authentication
+- SQLite
+
+## Development
+
+### Available Scripts
+
+In the frontend directory, you can run:
+
+- `npm start`: Runs the app in development mode
+- `npm test`: Launches the test runner
+- `npm run build`: Builds the app for production
+
+In the backend directory, you can run:
+
+- `python manage.py runserver`: Starts the development server
+- `python manage.py test`: Runs tests
+- `python manage.py makemigrations`: Creates new migrations
+- `python manage.py migrate`: Applies migrations
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [Django](https://www.djangoproject.com/)
+- [Material-UI](https://mui.com/)
+- [React Query](https://tanstack.com/query/latest)
+- [D3.js](https://d3js.org/)

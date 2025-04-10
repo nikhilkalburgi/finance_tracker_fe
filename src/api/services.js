@@ -2,12 +2,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 // Base API configuration
-const API_URL = "https://finance-tracker-be-1-4b7b0b6914ef.herokuapp.com/api";
+const API_URL = "https://finance-tracker-be-1-87a42fd39153.herokuapp.com/api";
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
-  },
+  }
 });
 
 // Add auth token to requests
