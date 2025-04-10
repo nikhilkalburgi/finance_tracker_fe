@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfinance_tracker_fe=self.webpackChunkfinance_tracker_fe||[]).push([[821],{821:(e,r,a)=>{a.d(r,{default:()=>o.A});var o=a(213);const{Axios:s,AxiosError:t,CanceledError:n,isCancel:c,CancelToken:i,VERSION:f,all:l,Cancel:C,isAxiosError:d,spread:k,toFormData:A,AxiosHeaders:p,HttpStatusCode:u,formToJSON:x,getAdapter:E,mergeConfig:_}=o.A}}]);
+//# sourceMappingURL=821.ece7a99e.chunk.js.map
